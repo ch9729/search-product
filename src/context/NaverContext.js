@@ -3,7 +3,7 @@ import React, { createContext, useState } from "react";
 export const ApiContext = createContext();
 
 export const NaverContext = ({ children }) => {
-  const [search, setSearch] = useState([]);
+  const [searchs, setSearchs] = useState([]);
 
   const getSearch = (product) => {
     fetch(`/api/v1/search/shop.json?query=${product}`, {
@@ -15,13 +15,13 @@ export const NaverContext = ({ children }) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        setSearch(data.items);
+        setSearchs(data.items);
       })
       .catch((err) => console.log(err));
   };
 
   return (
-    <ApiContext.Provider value={{ search, setSearch, getSearch }}>
+    <ApiContext.Provider value={{ searchs, setSearchs, getSearch }}>
       {children}
     </ApiContext.Provider>
   );
