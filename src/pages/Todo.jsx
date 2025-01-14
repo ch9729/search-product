@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import TodoInput from "../components/todo/TodoInput";
 import TodoInfo from "../components/todo/TodoInfo";
 import "../components/todo/Todo.css";
@@ -6,6 +6,21 @@ import "../components/todo/Todo.css";
 const Todo = () => {
   const [data, setData] = useState([]);
   const dataRef = useRef(0);
+
+  useEffect(() => {
+    if (localStorage.getItem("ItemData")) {
+      setData(JSON.parse(localStorage.getItem("ItemData")));
+    }
+    if (JSON.parse(localStorage.getItem("ItemData")).length > 0) {
+      dataRef.current = Math.max(
+        ...JSON.parse(localStorage.getItem("ItemData")).map((item) => item.id)
+      );
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("ItemData", JSON.stringify(data));
+  }, [data]);
 
   const changeData = (text) => {
     const newData = {
