@@ -1,0 +1,8 @@
+.TodoInput > input {
+  border: 1px solid silver;
+}
+
+.TodoInput > button {
+  border: 1px solid red;
+  border-radius: 5px;
+}

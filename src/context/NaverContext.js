@@ -20,8 +20,14 @@ export const NaverContext = ({ children }) => {
       .catch((err) => console.log(err));
   };
 
+  const clearProduct = () => {
+    setSearchs([]);
+  };
+
   return (
-    <ApiContext.Provider value={{ searchs, setSearchs, getSearch }}>
+    <ApiContext.Provider
+      value={{ searchs, setSearchs, getSearch, clearProduct }}
+    >
       {children}
     </ApiContext.Provider>
   );

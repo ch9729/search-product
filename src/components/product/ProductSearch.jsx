@@ -4,7 +4,7 @@ import { ApiContext } from "../../context/NaverContext";
 const ProductSearch = () => {
   const [search, setSearch] = useState("");
 
-  const { getSearch } = useContext(ApiContext);
+  const { getSearch, clearProduct } = useContext(ApiContext);
 
   const handleChange = (e) => {
     setSearch(e.target.value);
@@ -36,6 +36,9 @@ const ProductSearch = () => {
       />
       <button onClick={handleSubmit} className="btn join-item rounded-r-full">
         검색
+      </button>
+      <button onClick={clearProduct} className="btn">
+        정리
       </button>
     </div>
   );
