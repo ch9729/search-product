@@ -21,14 +21,18 @@ const Todo = () => {
     setData(newDiaryList);
   };
 
-  //   const itemIsdone = (targetId) => {
-  //     data.filter(())
-  //   }
+  const onUpdate = (targetId) => {
+    setData(
+      data.map((item) =>
+        item.id === targetId ? { ...item, isDone: !item.isDone } : item
+      )
+    );
+  };
 
   return (
     <div className="Todo">
       <TodoInput changeData={changeData} />
-      <TodoInfo data={data} itemDelete={itemDelete} />
+      <TodoInfo data={data} itemDelete={itemDelete} onUpdate={onUpdate} />
     </div>
   );
 };
