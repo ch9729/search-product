@@ -29,7 +29,7 @@ const TodoInput = ({ changeData }) => {
         value={input}
         onChange={changeText}
         onKeyDown={keyDown}
-        placeholder="사야할 물품"
+        placeholder="물품 검색"
         type="text"
       />
       <button onClick={handleSubmit}>추가</button>

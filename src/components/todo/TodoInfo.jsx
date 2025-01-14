@@ -20,17 +20,22 @@ const TodoInfo = ({ data, itemDelete, onUpdate }) => {
 
   return (
     <div className="TodoInfo">
+      <h1 className="text-4xl font-medium">사야할 목록☘</h1>
+
       <input type="text" onChange={OnChangeSearch} value={search} />
-      {filteredItems.map((item) => {
-        return (
-          <TodoItem
-            key={item.id}
-            item={item}
-            itemDelete={itemDelete}
-            onUpdate={onUpdate}
-          />
-        );
-      })}
+
+      <div className="item_wrapper">
+        {filteredItems.map((item) => {
+          return (
+            <TodoItem
+              key={item.id}
+              item={item}
+              itemDelete={itemDelete}
+              onUpdate={onUpdate}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 };

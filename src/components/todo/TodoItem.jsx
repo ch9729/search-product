@@ -12,7 +12,7 @@ const TodoItem = ({ item, itemDelete, onUpdate }) => {
   return (
     <div className="TodoItem">
       <input type="checkbox" checked={item.isDone} onChange={handleUpdate} />
-      <div>{item.text}</div>
+      <div className="text">{item.text}</div>
       <button onClick={handleDelete}>삭제</button>
     </div>
   );

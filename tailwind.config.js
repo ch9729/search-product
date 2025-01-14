@@ -4,8 +4,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#1E40AF", // 원하는 primary 색상 추가
-        "primary-content": "#FFFFFF", // 텍스트 색상 추가 (옵션)
+        primary: "#1E40AF",
+        "primary-content": "#FFFFFF",
       },
     },
   },

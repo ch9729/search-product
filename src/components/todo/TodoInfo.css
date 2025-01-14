@@ -1,3 +1,23 @@
+.TodoInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 .TodoInfo > input {
-  border: 1px solid red;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid rgb(220, 220, 220);
+  padding: 15px 0px;
+}
+
+.TodoInfo > input:focus {
+  outline: none;
+  border-bottom: 1px solid rgb(37, 147, 255);
+}
+
+.TodoInfo .item_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
