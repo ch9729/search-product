@@ -20,7 +20,7 @@ const ProductSearch = () => {
   };
 
   const keyDown = (e) => {
-    if (e.keyCode == 13) {
+    if (e.keyCode === 13) {
       handleSubmit();
     }
   };

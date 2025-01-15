@@ -1,6 +1,5 @@
 import React from "react";
 import { AiOutlineApple } from "react-icons/ai";
-import Todo from "../../pages/Todo";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
