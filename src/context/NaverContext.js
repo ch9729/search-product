@@ -7,18 +7,18 @@ export const NaverContext = ({ children }) => {
 
   const API_BASE_URL =
     process.env.NODE_ENV === "production"
-      ? "https://openapi.naver.com"
+      ? "/.netlify/functions/naverApiProxy"
       : "/api";
 
   const getSearch = (product) => {
-    fetch(`${API_BASE_URL}/v1/search/shop.json?query=${product}`, {
-      headers: {
-        "X-Naver-Client-Id": process.env.REACT_APP_X_Naver_Client_Id,
-        "X-Naver-Client-Secret": process.env.REACT_APP_X_Naver_Client_Secret,
-        Accept: "application/json",
-      },
+    fetch(`${API_BASE_URL}?query=${product}`, {
+      // headers: {
+      //   "X-Naver-Client-Id": process.env.REACT_APP_X_Naver_Client_Id,
+      //   "X-Naver-Client-Secret": process.env.REACT_APP_X_Naver_Client_Secret,
+      //   Accept: "application/json",
+      // },
     })
-      .then((res) => console.log(res))
+      .then((res) => res.json())
       .then((data) => {
         setSearchs(data.items);
       })
